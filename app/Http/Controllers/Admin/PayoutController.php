@@ -86,14 +86,6 @@ class PayoutController extends Controller
                         if ($request->max_payable_amount!="") {
                             $instance->where('payable_amount', '<=',$request->get('max_payable_amount'));
                         }
-
-
-
-                        
-                        
-                        
-                        
-                        
                        
                         if ($request->from_date!="") {
                             $from=date("Y-m-d 00:00:00",strtotime($request->get('from_date')));

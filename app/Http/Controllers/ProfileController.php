@@ -31,6 +31,9 @@ class ProfileController extends Controller
         $user->pincode=$request->pincode;
         $user->address=$request->address;
         $user->gender=$request->gender;
+        $user->nominee_dob=$request->nominee_dob;
+        $user->nominee=$request->nominee;
+        $user->nominee_relation=$request->nominee_relation;
         if($request->profile_image)
         {
             $fileName =time().'.'.$request->profile_image->extension();  

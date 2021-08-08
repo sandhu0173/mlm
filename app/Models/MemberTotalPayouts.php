@@ -48,4 +48,8 @@ class MemberTotalPayouts extends Model
         return 0;
        }
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class,'member_id');
+    }
 }

@@ -92,7 +92,9 @@
                     </a>
                     <div class="collapse" id="sidebarReports">
                         <ul class="nav-second-level">
-                            <li><a href="">Top Earners</a></li>
+                            <li><a href="{{ url('admin/report/charge') }}">ADMIN Charge Report</a></li>
+                            <li><a href="{{ url('admin/report/tds') }}">TDS Report</a></li>
+                            <li><a href="{{ url('admin/report/top-earner') }}">Top Earners</a></li>
                         </ul>
                     </div>
                 </li>

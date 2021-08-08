@@ -266,9 +266,9 @@ class OrdersController extends Controller
     function invoice(Request $request,$id)
     {
         $data['order']=Orders::find($id);
-        $d=file_get_contents('http://www.postalpincode.in/api/pincode/'.$data['order']->user->pincode);
-        $response=json_decode($d);
-        $data['address']=$response->PostOffice[0];
+       // $d=file_get_contents('http://www.postalpincode.in/api/pincode/'.$data['order']->user->pincode);
+        //$response=json_decode($d);
+        //$data['address']=$response->PostOffice[0];
         $data['count']=1;
         return view('admin.orders.invoice',$data);
     }

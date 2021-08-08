@@ -37,7 +37,7 @@
                     <img src="{{ asset(Helper::setting('logo')) }}" alt="" height="40" style="vertical-align: middle; border-style: none;">
                 </td>
                 <td style="width: 50%;" align="right">
-                    <h1 style="font-size: 1vw;"><strong>Tax Invoice </strong></h1>
+                    <h1 style="font-size: 1vw;"><strong>Invoice </strong></h1>
                 </td>
             </tr>
             <tr style="height: 16px;">
@@ -46,15 +46,17 @@
                     <b>Invoice No :</b>
                     <span class="ml-1">#{{ $order->invoice }}</span> <br>
                     <b class="text-dark">Invoice Date :</b>
-                    <span class="ml-1">{{ $order->created_at }}</span>
+                    <span class="ml-1">{{ date('d-m-Y',strtotime($order->created_at)) }}</span>
                 </td>
             </tr>
             <tr style="height: 90px;margin-top: 2rem;">
                 <td style="width: 50%;">
                     <h6>Company Address</h6>
                     <address style="color: #514d6a;  line-height: 24px;">
-                        <b>{{ Helper::setting('address') }}</b><br>
+                        <b>{{ Helper::setting('title') }}</b><br>
                         {!! Helper::setting('address') !!} <br>
+                        {!! Helper::setting('address_line_2') !!} <br>
+                        {{  Helper::setting('city').",".Helper::setting('state').",".Helper::setting('pincode').","  }} <br>
                     </address>
                     <p>
                         <b>Mobile No :</b> {{ Helper::setting('mobile') }}
@@ -62,15 +64,18 @@
                 </td>
                 <td style="width: 50%;">
                     <address style="color: #514d6a;  line-height: 24px;">
-                        <h6>Billing Address</h6>
+                        <h6>Billing To</h6>
                         <b>
                             {{$user->name }}
                         </b>
                         <br>
-                        {{ $address->District.','.$address->State.','.$address->Country }}
+                        {{ $user->address }}
                         {{ $user->pincode }}
                         <p>
                             <b>Mobile No :</b> {{ $user->mobile }}
+                        </p>
+                        <p>
+                            <b>Member ID :</b> {{ $user->member_id }}
                         </p>
                     </address>
                 </td>
@@ -128,10 +133,9 @@
                                                     
                                                 <tr>
                             <td style="border: 1px solid #dee2e6; padding: .85rem; vertical-align: top;line-height: 28px;font-size: 11pt" colspan="6">
-                                <b>CUSTOMER ACKNOWLEDGEMENT: </b>     Certified that I am at-least 18 years of age and have completed
-                                at-least 10th grade of schooling. I have received complete Silver
-                                online immediately after registration. I have carefully read terms &amp;
-                                conditions as given on website {{ env('APP_URL') }} and agree to them.
+                                <b>MEMBER ACKNOWLEDGEMENT: </b>     Certified that I am at-least 18 years of age and have completed
+                                at-least 10th grade of schooling. I have received the value for the money (Product/s) immediately after registration. I have carefully read terms &amp;
+                                conditions as given on website <b>www.mytrustlead.com</b> and agree to them.
                                 Currently I am not working with any other similar Business
                                 Operation. I am signing this DECLARATION with complete understanding
                                 and with my own WILL, without any PRESSURE / UNDUE INFLUENCE and

@@ -71,7 +71,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         © Copyright 2021. All Rights Reserved by
-                        <a href="https://base.mlmservices.in" target="_blank">{{ config('app.name', 'Laravel') }}</a>
+                        <a href="http://mytrustlead.com" target="_blank">{{ config('app.name', 'Laravel') }}</a>
                     </div>
                     <div class="col-md-6">
                                                     <span class="text-primary float-right">

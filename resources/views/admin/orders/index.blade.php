@@ -176,6 +176,7 @@
                 var propertyName =$(this).attr('name'); 
                     d[propertyName] = $(this).val();
             });
+            console.log(d);
             }
             
         },

@@ -92,5 +92,10 @@ Route::group(['middleware' => ['auth', 'admin'],'prefix'=>'admin'], function() {
     Route::match(['get','post'],'websetting/change-logo', [App\Http\Controllers\Admin\SettingController::class, 'changelogo']);
     Route::match(['get','post'],'websetting/contact-info', [App\Http\Controllers\Admin\SettingController::class, 'contactinfo']);
     Route::match(['get','post'],'websetting/general-settings', [App\Http\Controllers\Admin\SettingController::class, 'generalsettings']);
+   
+    
+    Route::match(['get','post'],'report/top-earner', [App\Http\Controllers\Admin\ReportController::class, 'topearner']);
+    Route::match(['get','post'],'report/tds', [App\Http\Controllers\Admin\ReportController::class, 'tds']);
+    Route::match(['get','post'],'report/charge', [App\Http\Controllers\Admin\ReportController::class, 'charge']);
 
 });
